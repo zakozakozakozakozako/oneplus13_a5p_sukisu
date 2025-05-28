@@ -234,7 +234,7 @@ jobs:
           
       - name: Add make name
         run: |
-         cd kernel_workspace/kernel_platform/scripts
+         cd kernel_workspace/kernel_platform/common/scripts
          sudo :> setlocalversion
          sudo echo "echo "${{ github.event.inputs.KERNEL_SUFFIX }}"" >> setlocalversion
 
