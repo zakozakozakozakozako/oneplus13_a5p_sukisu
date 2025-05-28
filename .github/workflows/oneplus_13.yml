@@ -234,9 +234,9 @@ jobs:
           
       - name: Add make name
         run: |
-         cd kernel_workspace/kernel_platform
-         sudo :> ./scripts/setlocalversion
-         sudo echo "echo "${{ github.event.inputs.KERNEL_SUFFIX }}"" >> ./scripts/setlocalversion
+         cd kernel_workspace/kernel_platform/scripts
+         sudo :> setlocalversion
+         sudo echo "echo "${{ github.event.inputs.KERNEL_SUFFIX }}"" >> setlocalversion
 
       - name: Add sched_ext
         if: ${{inputs.enable_feature_z }}
