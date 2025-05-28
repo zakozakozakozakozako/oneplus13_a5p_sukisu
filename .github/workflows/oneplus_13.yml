@@ -5,7 +5,7 @@ on:
       KERNEL_SUFFIX:
         description: '内核后缀修改(可改中文和emoji)'
         required: true
-        default: '-不穿苦茶❄'
+        default: '-酷安FutabaWa'
       KERNEL_TIME:
        description: "内核构建日期更改(默认为原厂)"
        required: true
