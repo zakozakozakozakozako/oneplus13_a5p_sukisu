@@ -235,7 +235,7 @@ jobs:
       - name: Add make name
         run: |
          cd kernel_workspace/kernel_platform/common
-         echo | sudo tee setlocalversion
+         sudo echo | sudo tee setlocalversion
          sudo echo "echo "${{ github.event.inputs.KERNEL_SUFFIX }}"" >> setlocalversion
          
       - name: Add sched_ext
