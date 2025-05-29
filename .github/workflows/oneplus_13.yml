@@ -234,9 +234,8 @@ jobs:
       - name: Add make name
         run: |
          cd kernel_workspace/kernel_platform
-         sudo sed -i 's/-dirty//' ./common/scripts/setlocalversion
+         sed -i 's/${scm_version}//' ./common/scripts/setlocalversion
          sudo sed -i 's/-4k/${{ github.event.inputs.KERNEL_SUFFIX }}/g' ./common/arch/arm64/configs/gki_defconfig
-
       - name: Add sched_ext
         if: ${{inputs.enable_feature_z }}
         run: |
@@ -252,7 +251,7 @@ jobs:
           echo "SOURCE_DATE_EPOCH=$SOURCE_DATE_EPOCH" >> $GITHUB_ENV
           
 
-      - name: 构建内核
+      - name: Build Kernel
         run: |
           export SOURCE_DATE_EPOCH=${SOURCE_DATE_EPOCH}
           export PATH="/home/runner/work/oneplus13_a5p_sukisu/oneplus13_a5p_sukisu/kernel_workspace/kernel_platform/prebuilts/clang/host/linux-x86/clang-r510928/bin:$PATH"
