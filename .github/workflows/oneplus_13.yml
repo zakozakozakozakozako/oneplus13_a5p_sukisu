@@ -168,7 +168,6 @@ jobs:
          +	
             return hmbird_proc_init();
          }
-         EOF
          if ! grep -q "hmbird_patch.o" Makefile; then
          echo "obj-y += hmbird_patch.o" >> Makefile
          fi
